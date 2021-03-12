@@ -1,31 +1,36 @@
 <?php
 
-if (!isset($_GET['action'])) {
-    $_GET['action'] = 'demandeConnexion';
+if ( !isset($_POST['action']) )
+{
+    $_POST['action'] = 'identification';
 }
 
-switch ($_GET['action']) {
-
-    case 'demandeConnexion': {
-        include("views/connexion.php");
+switch ($_POST['action'])
+{
+    case 'identification':
+    {
+        include('views/V_Connexion.php');
         break;
     }
 
-    case 'valideConnexion': {
+    case 'valideConnexion':
+    {
         $login = $_REQUEST['login'];
         $pwd = $_REQUEST['pwd'];
-        if ($login === "test") {
-            echo("bonjour");
-        } else {
-            echo("non connexté");
+        if ($login === "test")
+        {
+            $_SESSION['id'] = 1;
+            // TODO: RECUP LE ID DU USER CONNECTE.
+            $_POST['page'] = 'informations';
+            $_POST['action'] = 'afficherEtudiant';
+            include('index.php');
+        }
+        else
+        {
+            include("views/V_Connexion.php");
         }
         break;
     }
-
-    default : {
-		include("views/connexion.php");
-		break;
-	}
 }
 
 ?>

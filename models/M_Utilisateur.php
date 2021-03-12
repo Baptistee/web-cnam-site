@@ -372,5 +372,53 @@ class Utilisateur
             <?php
         }
     }
+
+    public static function updateUtilisateur($pPdo, &$pId, &$pNom, &$pPrenom, &$pIdentifiant, &$pEmail, &$pMdp, &$pRole, &$pPromo)
+    {
+        try {
+            $req="UPDATE utilisateur SET Nom=:Nom, Prenom=:Prenom, Identifiant=:Identifiant, Email=:Email, Mdp=:Mdp, Role=:Role, Promo=:Promo"
+                . " WHERE Id:=Id";
+            $pdo = $pPdo->getPdo();
+            $res=$pdo->prepare($req);
+
+            $res->bindValue(':Nom', $pNom, PDO::PARAM_STR);
+            $res->bindValue(':Prenom', $pPrenom, PDO::PARAM_STR);
+            $res->bindValue(':Identifiant', $pIdentifiant, PDO::PARAM_STR);
+            $res->bindValue(':Email', $pEmail, PDO::PARAM_STR);
+            $res->bindValue(':Mdp', $pMdp, PDO::PARAM_STR);
+            $res->bindValue(':Role', $pRole, PDO::PARAM_STR);
+            $res->bindValue(':Promo', $pPromo, PDO::PARAM_STR);
+            $res->bindValue(':Id', $pId, PDO::PARAM_INT);
+
+            $res->execute();
+        } catch (Exception $e) {
+            ?>
+
+            <p>Erreur : <?php $e->getMessage(); ?></p>
+
+            <?php
+        }
+    }
+
+    public static function deleteUtilisateur($pPdo, &$pId)
+    {
+        try {
+            $req="DELETE FROM utilisateur WHERE Id=:Id";
+            $pdo = $pPdo->getPdo();
+            $res=$pdo->prepare($req);
+
+            $res->bindValue(':Id', $pId, PDO::PARAM_INT);
+
+            // TODO : ajout automatique de la date connexion et creation.
+
+            $res->execute();
+        } catch (Exception $e) {
+            ?>
+
+            <p>Erreur : <?php $e->getMessage(); ?></p>
+
+            <?php
+        }
+    }
 }
 ?>
