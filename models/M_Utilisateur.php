@@ -418,5 +418,25 @@ class Utilisateur
             <?php
         }
     }
+
+    public static function retournerTousUtilisateurs($pPdo)
+    {
+        try {
+            $req="SELECT * FROM utilisateur";
+            $pdo = $pPdo->getPdo();
+            $res=$pdo->query($req);
+
+            $res->execute();
+
+            $data = $res->fetchAll(PDO::FETCH_ASSOC);
+            return $data;
+        } catch (Exception $e) {
+            ?>
+
+            <p>Erreur : <?php $e->getMessage(); ?></p>
+
+            <?php
+        }
+    }
 }
 ?>

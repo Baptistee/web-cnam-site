@@ -25,12 +25,6 @@ switch($_POST['action'])
         break;
     }
 
-    case 'consulter':
-    {
-        include('views/V_Etudiant.php');
-        break;
-    }
-
     case 'ajouter':
     {
         include('views/V_Utilisateur_Ajouter.php');
@@ -51,8 +45,8 @@ switch($_POST['action'])
 
     case 'afficherUtilisateur':
     {
-        Utilisateur::getIdentifiant($pdo, $_REQUEST['id']);
-        include('views/V_Etudiant.php');
+        $res = Utilisateur::retournerTousUtilisateurs($pdo);
+        include('views/V_Utilisateurs_Afficher.php');
         break;
     }
 

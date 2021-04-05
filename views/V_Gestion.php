@@ -14,9 +14,9 @@
                         <form action='index.php' method='post'>
 
                             <input type='hidden' name='page' value='informations'/>
-                            <input type='hidden' name='action' value='consulter'/>
+                            <input type='hidden' name='action' value='afficherUtilisateur'/>
 
-                            <button id="linkbutton" type='submit'>Consulter</button>
+                            <button class="linkbutton" type='submit'>Consulter</button>
                         </form>
                     </li>
 
@@ -26,7 +26,7 @@
                             <input type='hidden' name='page' value='informations'/>
                             <input type='hidden' name='action' value='ajouter'/>
 
-                            <button id="linkbutton" type='submit'>Ajouter</button>
+                            <button class="linkbutton" type='submit'>Ajouter</button>
                         </form>
                     </li>
 
@@ -36,7 +36,7 @@
                             <input type='hidden' name='page' value='informations'/>
                             <input type='hidden' name='action' value='modifier'/>
 
-                            <button id="linkbutton" type='submit'>Modifier</button>
+                            <button class="linkbutton" type='submit'>Modifier</button>
                         </form>
                     </li>
 
@@ -46,7 +46,7 @@
                             <input type='hidden' name='page' value='informations'/>
                             <input type='hidden' name='action' value='supprimer'/>
 
-                            <button id="linkbutton" type='submit'>Supprimer</button>
+                            <button class="linkbutton" type='submit'>Supprimer</button>
                         </form>
                     </li>
 
