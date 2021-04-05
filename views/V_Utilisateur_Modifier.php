@@ -1,45 +1,29 @@
 <br>
-<div class="card mx-auto w-50">
-    <div class="card-header text-center"><h4 class="card-title mt-3 text-center">Modifier un utilisateur</h4></div>
-    <div class="card-body">
-        <article class="card-body mx-auto">
-        <form action="index.php" method="post">
-
-            <thead>
-                <tr>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Prenom</th>
-                    <th scope="col">Identifiant</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Mdp</th>
-                    <th scope="col">Role</th>
-                    <th scope="col">Promo</th>
-                    <th scope="col">Id</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <?php foreach ($res as $unUtilisateur => $valeur): ?>
-                    
-                        <tr>
-                            <th scope="row"> <input type="text" name="nom" value="<?=$valeur["Nom"]?>"/> </th>
-                            <td> <input type="text" name="prenom" value="<?=$valeur["Prenom"]?>"/> </td>
-                            <td> <input type="text" name="identifiant" value="<?=$valeur["Identifiant"]?>"/> </td>
-                            <td> <input type="text" name="email" value="<?=$valeur["Email"]?>"/> </td>
-                            <td> <input type="text" name="mdp" value="<?=$valeur["Mdp"]?>"/> </td>
-                            <td> <input type="text" name="role" value="<?=$valeur["Role"]?>"/> </td>
-                            <td> <input type="text" name="promo" value="<?=$valeur["Promo"]?>"/> </td>
-                            <td> <input type="text" name="id" value="<?=$valeur["Id"]?>"/> </td>
-                            <input type="hidden" name="page" value="informations">
-                            <input type="hidden" name="action" value="modifierUtilisateur">
-                            <td><input type='submit' value='Submit'> </td>
-                        </tr>
-                        
-                <?php endforeach; ?>
-            </tbody>
-                   
-        </form>
-        </article>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <?php foreach ($res as $unUtilisateur => $valeur): ?>
+        <div class="col">
+            <div class="card">
+                <h5 class="card-title"><?php print($valeur["Nom"]." ".$valeur["Prenom"])?></h5>
+                <div class="card-body">
+                    <form action="index.php" method="post">
+                        <ul class="list-group">
+                            <li class="list-group-item"> Nom : <input type="text" name="nom" value="<?=$valeur["Nom"]?>"/></li>
+                            <li class="list-group-item"> Prénom : <input type="text" name="prenom" value="<?=$valeur["Prenom"]?>"/></li>
+                            <li class="list-group-item"> Identifiant : <input type="text" name="identifiant" value="<?=$valeur["Identifiant"]?>"/></li>
+                            <li class="list-group-item"> Email : <input type="text" name="email" value="<?=$valeur["Email"]?>"/></li>
+                            <li class="list-group-item"> Mdp : <input type="text" name="mdp" value="<?=$valeur["Mdp"]?>"/></li>
+                            <li class="list-group-item"> Role : <input type="text" name="role" value="<?=$valeur["Role"]?>"/></li>
+                            <li class="list-group-item"> Promo : <input type="text" name="promo" value="<?=$valeur["Promo"]?>"/></li>
+                        </ul>
+                        <input type="hidden" name="modifier_id" value="<?=$valeur["Id"]?>">
+                        <input type="hidden" name="page" value="informations">
+                        <input type="hidden" name="action" value="modifierUtilisateur">
+                        <input type='submit' value='Submit'>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <?php endforeach; ?>
     </div>
-    <br>
 </div>
