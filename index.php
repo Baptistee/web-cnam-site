@@ -7,8 +7,9 @@ if ( !isset($_SESSION['started']) )
 require_once('models/M_Connexion.php');
 $pdo = PdoConnexion::getPdoConnexion();
 require_once('models/M_Utilisateur.php');
-require_once('views/head.php');
-require_once("views/header.php");
+
+include('views/head.php');
+include("views/header.php");
 
 if ( !isset($_SESSION['id']) ||
         !isset($_POST['page']))
@@ -18,11 +19,6 @@ if ( !isset($_SESSION['id']) ||
 
 switch($_POST['page'])
 {
-    case 'API': {
-        include('controllers/C_API.php');
-        break;
-    }
-    
     case 'connexion': {
         include('controllers/C_Connexion.php');
         break;
@@ -34,7 +30,6 @@ switch($_POST['page'])
     }
 
     default: {
-        var_dump($_SERVER['REQUEST_URI']);
         break;
     }
 }

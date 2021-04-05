@@ -6,6 +6,7 @@
     <p> Mdp : <input type="text" name="mdp" /></p>
     <p> Role : <input type="text" name="role" /></p>
     <p> Promo : <input type="text" name="promo" /></p>
+    <input type="hidden" name="page" value="informations">
     <input type="hidden" name="action" value="ajouterUtilisateur">
     <input type='submit' value='Submit'>
 </form>

@@ -1,25 +1,16 @@
-<header>
+<div class="container">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="card mx-auto w-50" style="max-width: 500px;">
+        
+        <div class="card-header text-center"><h4 class="card-title mt-3 text-center">Page admin de gestion</h4></div>
+        
+        <div class="card-body">
 
-        <div class="container-fluid">
+            <article class="card-body mx-auto" style="max-width: 400px;">
 
-            <h1 class="display-6">CNAM</h1>
+                <ul class="list-group list-group-flush">
 
-            <a class="navbar-brand" href="#">Bienvenue</a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-
-            <ul class="navbar-nav">
-                <?php
-                if(isset($_SESSION['id']))
-                {
-                    ?>
-                    <li class="nav-item">
+                    <li>
                         <form action='index.php' method='post'>
 
                             <input type='hidden' name='page' value='informations'/>
@@ -29,7 +20,7 @@
                         </form>
                     </li>
 
-                    <li class="nav-item">
+                    <li>
                         <form action='index.php' method='post'>
 
                             <input type='hidden' name='page' value='informations'/>
@@ -39,7 +30,7 @@
                         </form>
                     </li>
 
-                    <li class="nav-item">
+                    <li>
                         <form action='index.php' method='post'>
 
                             <input type='hidden' name='page' value='informations'/>
@@ -49,7 +40,7 @@
                         </form>
                     </li>
 
-                    <li class="nav-item">
+                    <li>
                         <form action='index.php' method='post'>
 
                             <input type='hidden' name='page' value='informations'/>
@@ -58,18 +49,13 @@
                             <button id="linkbutton" type='submit'>Supprimer</button>
                         </form>
                     </li>
-                    <?php
-                }
-                
-                ?>
-            </ul>
 
-            </div>
+                </ul>
+
+            </article>
 
         </div>
 
-    </nav>
+    </div>
 
-</header>
-
-<br>
+</div>

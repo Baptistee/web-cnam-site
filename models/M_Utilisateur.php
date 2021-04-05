@@ -409,8 +409,6 @@ class Utilisateur
 
             $res->bindValue(':Id', $pId, PDO::PARAM_INT);
 
-            // TODO : ajout automatique de la date connexion et creation.
-
             $res->execute();
         } catch (Exception $e) {
             ?>

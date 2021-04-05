@@ -17,13 +17,13 @@ switch ($_POST['action'])
     {
         $login = $_REQUEST['login'];
         $pwd = $_REQUEST['pwd'];
-        if ($login === "test")
+
+        if ($login === "admin" && $pwd === "QuatreFois0")
         {
             $_SESSION['id'] = 1;
-            // TODO: RECUP LE ID DU USER CONNECTE.
             $_POST['page'] = 'informations';
-            $_POST['action'] = 'afficherEtudiant';
-            include('index.php');
+            $_POST['action'] = 'gestion';
+            include('views/V_Gestion.php');
         }
         else
         {
