@@ -1,21 +1,13 @@
 <?php
 
-$Id = 1;
-$tNom = 'Bibop';
-$tPrenom = 'Rachmaninov';
-$tIdentifiant = 'bibop.rakrak';
-$tEmail = 'bibop@raktaktak.ru';
-$tMdp = 'QuatreFoisLe0';
-$tRole = 'etudiant';
-$tPromo = '2019-2050';
-
-$Nom = Utilisateur::getNom($pdo, $Id);
-$Prenom = Utilisateur::getPrenom($pdo, $Id);
-$Identifiant = Utilisateur::getIdentifiant($pdo, $Id);
-$Email = Utilisateur::getEmail($pdo, $Id);
-$Promo = Utilisateur::getPromo($pdo, $Id);
-$Date_Creation = Utilisateur::getDateCreation($pdo, $Id);
-$Date_Connexion = Utilisateur::getDateConnexion($pdo, $Id);
+$id = 1;
+$nom = "Bonjour";
+$prenom = "Baptiste";
+$identifiant = "baptiste.blanchet";
+$email = "baptiste.blanchet";
+$mdp = "QuatreFois0";
+$role = "etudiant";
+$promo = "2019-2022";
 
 switch($_POST['action'])
 {
@@ -33,6 +25,7 @@ switch($_POST['action'])
 
     case 'modifier':
     {
+        $res = Utilisateur::retournerTousUtilisateurs($pdo);
         include('views/V_Utilisateur_Modifier.php');
         break;
     }

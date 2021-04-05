@@ -21,7 +21,7 @@
             <tbody>
                 <?php foreach ($res as $unUtilisateur => $valeur): ?>
                     <tr>
-                        <td scope="row"> <?=$valeur["Id"]?> </td>
+                        <th scope="row"> <?=$valeur["Id"]?> </th>
                         <td> <?=$valeur["Nom"]?> </td>
                         <td> <?=$valeur["Prenom"]?> </td>
                         <td> <?=$valeur["Identifiant"]?> </td>

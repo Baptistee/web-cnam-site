@@ -377,7 +377,7 @@ class Utilisateur
     {
         try {
             $req="UPDATE utilisateur SET Nom=:Nom, Prenom=:Prenom, Identifiant=:Identifiant, Email=:Email, Mdp=:Mdp, Role=:Role, Promo=:Promo"
-                . " WHERE Id:=Id";
+                . " WHERE Id=:Id";
             $pdo = $pPdo->getPdo();
             $res=$pdo->prepare($req);
 
@@ -394,7 +394,7 @@ class Utilisateur
         } catch (Exception $e) {
             ?>
 
-            <p>Erreur : <?php $e->getMessage(); ?></p>
+            <p>Erreur : <?php print($pId . " " . $pNom . " " . $pPrenom . " " . $pIdentifiant . " " . $pEmail . " " . $pMdp . " " . $pRole . " " . $pPromo . " "); print($e->getMessage()); ?></p>
 
             <?php
         }
