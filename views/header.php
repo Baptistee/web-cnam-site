@@ -35,7 +35,7 @@
                             <input type='hidden' name='page' value='informations'/>
                             <input type='hidden' name='action' value='ajouter'/>
 
-                            <button class="linkbutton" type='submit'>Ajouter</button>
+                            <button class="linkbutton" type='submit'> . Ajouter</button>
                         </form>
                     </li>
 
@@ -45,7 +45,7 @@
                             <input type='hidden' name='page' value='informations'/>
                             <input type='hidden' name='action' value='modifier'/>
 
-                            <button class="linkbutton" type='submit'>Modifier</button>
+                            <button class="linkbutton" type='submit'> . Modifier</button>
                         </form>
                     </li>
 
@@ -55,7 +55,7 @@
                             <input type='hidden' name='page' value='informations'/>
                             <input type='hidden' name='action' value='supprimer'/>
 
-                            <button class="linkbutton" type='submit'>Supprimer</button>
+                            <button class="linkbutton" type='submit'> . Supprimer</button>
                         </form>
                     </li>
                     <?php
