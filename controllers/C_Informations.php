@@ -59,7 +59,7 @@ switch($_POST['action'])
     case 'modifierUtilisateur':
     {
         Utilisateur::updateUtilisateur($pdo,
-            $_REQUEST['id'],
+            $_POST['modifier_id'],
             $_REQUEST['nom'],
             $_REQUEST['prenom'],
             $_REQUEST['identifiant'],
