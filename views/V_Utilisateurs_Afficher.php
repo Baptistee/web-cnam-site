@@ -34,6 +34,7 @@
             </tbody>
 
         </table>
+     </article>
     </div>
     <br>
 </div>
