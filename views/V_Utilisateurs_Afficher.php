@@ -3,7 +3,7 @@
     <div class="card-header text-center"><h4 class="card-title mt-3 text-center">Tableau des utilisateurs</h4></div>
     <div class="card-body">
         <article class="card-body mx-auto">
-        <table id="tableau" class="table text-center table table-hover table-bordered" style="width: 100%">
+        <table class="table text-center table table-hover table-bordered" style="width: 100%">
 
             <thead>
                 <tr>

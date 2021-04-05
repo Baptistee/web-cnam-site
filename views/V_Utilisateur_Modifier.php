@@ -3,7 +3,7 @@
     <div class="card-header text-center"><h4 class="card-title mt-3 text-center">Modifier un utilisateur</h4></div>
     <div class="card-body">
         <article class="card-body mx-auto">
-        <table id="tableau" class="table text-center table table-hover table-bordered" style="width: 100%">
+        <form action="index.php" method="post">
 
             <thead>
                 <tr>
@@ -20,7 +20,7 @@
 
             <tbody>
                 <?php foreach ($res as $unUtilisateur => $valeur): ?>
-                    <form action="index.php" method="post">
+                    
                         <tr>
                             <th scope="row"> <input type="text" name="nom" value="<?=$valeur["Nom"]?>"/> </th>
                             <td> <input type="text" name="prenom" value="<?=$valeur["Prenom"]?>"/> </td>
@@ -34,12 +34,11 @@
                             <input type="hidden" name="action" value="modifierUtilisateur">
                             <td><input type='submit' value='Submit'> </td>
                         </tr>
-                    </form>
-
+                        
                 <?php endforeach; ?>
             </tbody>
-
-        </table>
+                   
+        </form>
         </article>
     </div>
     <br>

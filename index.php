@@ -8,7 +8,7 @@ require_once('models/M_Connexion.php');
 $pdo = PdoConnexion::getPdoConnexion();
 require_once('models/M_Utilisateur.php');
 
-include('views/head.php');
+include_once('views/head.php');
 include("views/header.php");
 
 if ( !isset($_SESSION['id']) ||
