@@ -4,16 +4,11 @@ if ( !isset($_SESSION['started']) )
     session_start();
     $_SESSION['started'] = true;
 }
-require_once('Models/M_Connexion.php');
+require_once('models/M_Connexion.php');
 $pdo = PdoConnexion::getPdoConnexion();
-require_once('Models/M_Utilisateur.php');
+require_once('models/M_Utilisateur.php');
 require_once('views/head.php');
 require_once("views/header.php");
-
-if (!isset($_POST['page']))
-{
-    $_POST['page'] = 'connexion';
-}
 
 if ( !isset($_SESSION['id']) ||
         !isset($_POST['page']))
@@ -23,6 +18,11 @@ if ( !isset($_SESSION['id']) ||
 
 switch($_POST['page'])
 {
+    case 'API': {
+        include('controllers/C_API.php');
+        break;
+    }
+    
     case 'connexion': {
         include('controllers/C_Connexion.php');
         break;
@@ -30,6 +30,11 @@ switch($_POST['page'])
 
     case 'informations': {
         include('controllers/C_Informations.php');
+        break;
+    }
+
+    default: {
+        var_dump($_SERVER['REQUEST_URI']);
         break;
     }
 }

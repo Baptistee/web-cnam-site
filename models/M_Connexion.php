@@ -1,10 +1,10 @@
 <?php
 class PdoConnexion
 {
-    private static $serveur='mysql:host=localhost';
-    private static $bdd='dbname=mini_site';
-    private static $user='root';
-    private static $mdp='';
+    private static $serveur='mysql:host=mysql-baptiste.alwaysdata.net';
+    private static $bdd='dbname=baptiste_bdd';
+    private static $user='baptiste_admin';
+    private static $mdp='QuatreFois0';
     private static $pdo;
     private static $pdoSite = null;
 
